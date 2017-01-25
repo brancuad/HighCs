@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../Styles/styles.css" />
+        <script src="../Scripts/jquery-3.1.0.min.js"></script>
+        <script src="../Scripts/base.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+        <!-- Gallery Scripts -->
+        <script data-source="../Scripts/gallery/googbase_min.js" data-version="3" data-exports-type="googbase" src="../Scripts/gallery/googbase_min.js"></script>
+          <script data-source="../Scripts/gallery/gwd_webcomponents_min.js" data-version="5" data-exports-type="gwd_webcomponents" src="../Scripts/gallery/gwd_webcomponents_min.js"></script>
+          <script data-source="../Scripts/gallery/gwdgesture_min.js" data-version="3" data-exports-type="gwd-gesture" src="../Scripts/gallery/gwdgesture_min.js"></script>
+          <script data-source="../Scripts/gallery/gwdimage_min.js" data-version="9" data-exports-type="gwd-image" src="../Scripts/gallery/gwdimage_min.js"></script>
+          <script data-source="../Scripts/gallery/gwdpage_min.js" data-version="8" data-exports-type="gwd-page" src="../Scripts/gallery/gwdpage_min.js"></script>
+          <script data-source="../Scripts/gallery/gwdgallerynavigation_min.js" data-version="4" data-exports-type="gwd-gallerynavigation" src="../Scripts/gallery/gwdgallerynavigation_min.js"></script>
+          <script data-source="../Scripts/gallery/gwdswipegallery_min.js" data-version="17" data-exports-type="gwd-swipegallery" src="../Scripts/gallery/gwdswipegallery_min.js"></script>
+          
+          <!-- Gallery Styles -->
+          <link href="../Scripts/gallery/gwdgesture_style.css" rel="stylesheet" data-version="3" data-exports-type="gwd-gesture">
+          <link href="../Scripts/gallery/gwdimage_style.css" rel="stylesheet" data-version="9" data-exports-type="gwd-image">
+          <link href="../Scripts/gallery/gwdpage_style.css" rel="stylesheet" data-version="8" data-exports-type="gwd-page">
+          <link href="../Scripts/gallery/gwdgallerynavigation_style.css" rel="stylesheet" data-version="4" data-exports-type="gwd-gallerynavigation">
+          <link href="../Scripts/gallery/gwdswipegallery_style.css" rel="stylesheet" data-version="17" data-exports-type="gwd-swipegallery">
+
+        <style type="text/css">
+            .gwd-swipegallery-aioa {
+              width: 750px;
+              height: 250px;
+            }
+
+            #slider {
+                margin: 10px;            
+            }
+
+            .news {
+              background-color: #eee;
+              max-width: 800px;
+              min-height: 100px;
+              margin: 20px auto;
+              border: 1px solid #aaa;
+              overflow: auto;
+            }
+
+            .news_header {
+              display: table;
+              width: 90%;
+              padding: 10px;
+              margin: 10px auto;
+              border: 0px solid #aaa;
+              border-bottom-width: 1px;
+            }
+
+            .news_image {
+              width: 300px;
+              float: right;
+            }
+
+            .news_title {
+              font-size: 30px;
+              display: table-cell;
+              vertical-align: middle;
+            }
+
+            .news_body {
+              margin: 10px;
+              padding: 10px;
+            }
+
+            .news_footer {
+              border: 0px dashed #aaa;
+              border-top-width: 1px;
+              text-align: right;
+              margin: 10px;
+              padding: 10px;
+              font-size: 14px;
+            }
+        </style>
+
+        <script type="text/javascript">
+            $ (function () {
+                $("#slider").fadeIn(600);
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id="header"></div>
+
+        <div id="content">
+          <center>
+            <div id="slider" style="display: none;">
+                  <gwd-swipegallery id="gallery" scaling="contain" pause-front-media="" resume-next-media="" class="gwd-swipegallery-aioa" images="../Images/Gallery/DSC_0307_1.JPG,../Images/Gallery/logocover.png,../Images/Gallery/fall_placeholder.jpg,../Images/Gallery/spy.jpg" autoplay="" has-navigation=""></gwd-swipegallery>
+            </div>
+          </center>
+
+          <div class="news">
+            <div class="news_header">
+              <div class="news_title">Welcome, from the High C's!</div>
+              <img class="news_image" src="../Images/News/welcome.jpg" />
+            </div>
+
+            <div class="news_body">
+              <p>Welcome to the new Stony Brook High C's website! Stay tuned as we fill our pages with more content in due time!</p>
+              
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta lacus ac mi pellentesque, in porta est dictum. Integer pretium lacus eu magna fermentum pellentesque. Cras faucibus ut velit et posuere. Nulla facilisi. Mauris non hendrerit lectus. Nam nec ante nibh. Sed sed quam vel turpis tristique elementum id vel eros. Donec id facilisis turpis. Nam et eros at lorem euismod vestibulum. Integer egestas diam eget consequat euismod. Aliquam non tristique libero, sed placerat libero. Nunc nibh leo, accumsan ut magna id, fringilla mattis est. Aliquam erat volutpat. Cras interdum rutrum tortor a pellentesque.</p>
+              
+              <p>Suspendisse sed turpis bibendum neque interdum fermentum vitae eu nunc. Curabitur dolor leo, dignissim vitae fermentum ut, dictum sed massa. Etiam pellentesque vehicula nisl quis fringilla. Aliquam in dui vel metus egestas molestie in vel dolor. Integer orci sapien, dictum eget dignissim sit amet, venenatis vitae erat. Quisque a massa ex. Curabitur facilisis lacinia nunc et luctus. Aliquam ipsum turpis, egestas a commodo at, imperdiet in sapien. Vivamus sed augue ex. Nunc lacinia lobortis dolor. Etiam efficitur, sapien id iaculis venenatis, urna tellus gravida purus, sed ullamcorper eros justo vel est.</p>
+            </div>
+
+            <div class="news_footer">
+              December 4, 2016
+            </div>
+
+          </div>
+        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

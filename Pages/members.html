@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../Styles/styles.css" />
+        <script src="../Scripts/jquery-3.1.0.min.js"></script>
+        <script src="../Scripts/base.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
+        <style type="text/css">
+            #members {
+                max-width: 1500px;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .memberCard {
+                background-color: #eee;
+                width: 450px;
+                min-height: 310px;
+                border: 1px solid #aaa;
+                margin: 20px;
+                text-align: left;
+                display: inline-block;
+            }
+
+            .memberImage {
+              width: 200px;
+              height: 300px;
+              border: 1px solid #aaa;
+              margin: 5px;
+              float: left;
+            }
+
+            .memberInfo {
+              font-size: 18px;
+              margin: 5px;
+            }
+
+            .memberName {
+              font-size: 20px;
+              font-weight: bold;
+              text-align:center;
+            }
+        </style>
+
+        <script type="text/javascript">
+          var members = [
+            Brandon = {
+              name: "Brandon",
+              image: "Brandon.png",
+              position: "President",
+              voice: "Tenor 2",
+              major: "Computer Science",
+            },
+
+            Nick = {
+              name: "Nick",
+              image: "Nick.png",
+              position: "Vice President",
+              voice: "Bass",
+              major: "Electrical Engineering",
+            },
+
+            Noah = {
+              name: "Noah",
+              image: "Noah.png",
+              position: "Treasurer",
+              voice: "Tenor 2",
+              major: "English, Journalism",
+            },
+
+            Ryan = {
+              name: "Ryan",
+              image: "Ryan.png",
+              position: "Secretary",
+              voice: "Tenor 2",
+              major: "Biology, Pre-Med",
+            },
+
+            Robert = {
+              name: "Robert",
+              image: "Robert.png",
+              position: "Music Director",
+              voice: "Bass, Beatbox",
+              major: "Music",
+            },
+
+            Blake = {
+              name: "Blake",
+              image: "Blake.png",
+              position: "Member",
+              voice: "Tenor 1",
+              major: "Music",
+            },
+
+            Joe = {
+              name: "Joe",
+              image: "Joe.png",
+              position: "Member",
+              voice: "Tenor 1",
+              major: "Electrical Engineering",
+            },
+
+            BrandonL = {
+              name: "Brandon",
+              image: "BrandonL.png",
+              position: "Member",
+              voice: "Tenor 2",
+              major: "Theatre",
+            },
+
+            Alan = {
+              name: "Alan",
+              image: "Alan.png",
+              position: "Member",
+              voice: "Baritone",
+              major: "Mec. Engineering",
+            },
+
+            Cheng = {
+              name: "Cheng",
+              image: "Cheng.png",
+              position: "Member",
+              voice: "Baritone",
+              major: "Computer Science",
+            },
+
+            Allen = {
+              name: "Allen",
+              image: "Allen.png",
+              position: "Member",
+              voice: "Baritone",
+              major: "Undecided",
+            },
+
+            George = {
+              name: "George",
+              image: "George.png",
+              position: "Member",
+              voice: "Bass",
+              major: "American Studies",
+            },
+
+            Terrence = {
+              name: "Terrence",
+              image: "Terrence.png",
+              position: "Member",
+              voice: "Bass",
+              major: "Biology",
+            },
+
+            Andrew = {
+              name: "Andrew",
+              image: "Andrew.png",
+              position: "Member",
+              voice: "Beatbox",
+              major: "Undecided",
+            },
+          ];
+
+          $(function() {
+            // Add members
+            for(var i = 0; i < members.length; i++) {
+              var member = members[i];
+
+              var memberCard = $("<div></div>").appendTo("#members").addClass("memberCard");
+
+              $("<img />").appendTo(memberCard).addClass("memberImage").attr("src", "../Images/Members/" + member.image);
+
+              var memberInfo = $("<div></div>").addClass("memberInfo").appendTo(memberCard);
+
+              $("<div></div>").appendTo(memberInfo).addClass("memberName").text(member.name);
+
+              $("<hr />").appendTo(memberInfo);
+
+              if (member.position) {
+                $("<div></div>").appendTo(memberInfo).addClass("memberPosition").text("Position: " + member.position);
+              }
+
+              $("<div></div>").appendTo(memberInfo).addClass("memberVoice").text("Voice Part: " + member.voice);
+
+              $("<div></div>").appendTo(memberInfo).addClass("memberMajor").text("Major: " + member.major);
+
+              $("<br />").appendTo(memberInfo);
+
+              if (!member.bio) {
+                member.bio = "Coming Soon";
+              }
+              $("<div></div>").appendTo(memberInfo).addClass("memberBio").text("Bio: " + member.bio);
+
+
+            }
+          });
+        </script>
+
+    </head>
+    <body>
+        <div id="header"></div>
+
+        <div id="content">
+            <div id="members">
+
+            </div>
+        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

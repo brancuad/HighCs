@@ -1,0 +1,204 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../Styles/styles.css" />
+        <script src="../Scripts/jquery-3.1.0.min.js"></script>
+        <script src="../Scripts/base.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
+        <style type="text/css">
+          .form {
+            background-color: #eee;
+            max-width: 500px;
+            min-height: 100px;
+            margin: 20px auto;
+            border: 1px solid #aaa;
+          }
+
+          .fields {
+            width: 400px;
+            font-size: 18px;
+            margin: 20px auto;
+          }
+
+          .fields input {
+            width: 100%;
+          }
+
+          .time {
+            width: auto!important;
+          }
+
+          .num {
+            width: 40px!important;
+          }
+
+          .formSubmit {
+            padding: 5px 7px;
+            background-color: #fff;
+            border: 1px solid #aaa;
+          }
+
+          .formSubmit:hover {
+            border-width: 2px;
+          }
+
+          .message {
+
+          }
+
+          .error {
+            background-color: #db2000;
+          }
+
+          .success {
+            background-color: #34ad00;
+          }
+
+          #message {
+
+            color: white;
+            opacity: .6;
+            display: none;
+            text-align: center;
+          }
+
+        </style>
+
+        <script type="text/javascript">
+          $(function() {
+          });
+
+          var onSubmit = function() {
+            var args = {
+              org : $("input[name='org']").val(),
+              email : $("input[name='email']").val(),
+              event : $("input[name='event']").val(),
+              date : $("input[name='date']").val(),
+              startTime : $("input[name='startTime']").val(),
+              endTime : $("input[name='endTime']").val(),
+              songCount : $("input[name='songCount']").val(),
+              genre : $("input[name='genre']").val(),
+              notes : $("textarea[name='notes']").val()
+            };
+
+            /*
+            var org = $("input[name='org']").val();
+            var email = $("input[name='email']").val();
+            var event = $("input[name='event']").val();
+            var date = $("input[name='date']").val();
+            var startTime = $("input[name='startTime']").val();
+            var endTime = $("input[name='endTime']").val();
+            var songCount = $("input[name='songCount']").val();
+            var genre = $("input[name='genre']").val();
+            var notes = $("textarea[name='notes']").val();
+            */
+
+            if (!args.org) {
+              errorMessage("Organization or Host required.")
+              return;
+            }
+
+            else if(!args.email || !args.email.includes('@') || !args.email.includes('.')) {
+              errorMessage("Invalid email.");
+              return;
+            }
+
+            else if(!args.event) {
+              errorMessage("Event Title required.");
+              return;
+            }
+
+            else if (!parseInt(args.date)) {
+              errorMessage("Performance Date required.");
+              return;
+            }
+
+            else if (!parseInt(args.startTime) || !parseInt(args.endTime)) {
+              errorMessage("Performance Time required.");
+              return;
+            }
+
+            else if (!parseInt(args.songCount)) {
+              errorMessage("Number of Songs required.");
+              return;
+            }
+
+            sendEmail(args);
+            return;
+
+          }
+
+          var errorMessage = function(message) {
+            $("#message").attr("class","error").text("Error: " + message).hide().fadeIn();
+          }
+
+          var successMessage = function(message) {
+            $("#message").text("Success: " + message).hide().fadeIn().removeClass("error").attr("class","success");
+          }
+
+          var sendEmail = function(args) {
+
+
+            successMessage("Request sent.");
+            return;
+          }
+        </script>
+
+    </head>
+    <body>
+        <div id="header"></div>
+
+        <div id="content">
+          <div class="form">
+            <center><h2>Request a Performance</h2></center>
+            <table class="fields">
+              <tr>
+                <td>Organization/Host:</td> 
+                <td><input name="org" type="text"/></td>
+              </tr>
+
+              <tr>
+                <td>Email Address:</td> 
+                <td><input name="email" type="email"/></td>
+              </tr>
+
+              <tr>
+                <td>Event Title:</td> 
+                <td><input name="event" type="text"/></td>
+              </tr>
+
+              <tr>
+                <td>Performance Date:</td> 
+                <td><input name="date" type="date"/></td>
+              </tr>
+
+              <tr>
+                <td>Performance Time:</td> 
+                <td><input class="time" name="startTime" type="time"/> - <input class="time" name="endTime" type="time"/></td>
+              </tr>
+
+              <tr>
+                <td>Number of Songs:</td> 
+                <td><input class="num" name="songCount" type="number" min="1" max="5"/> <span style="font-size: 14px">(Max: 5)</span></td>
+              </tr>
+
+              <tr>
+                <td>Theme/Genre:</td> 
+                <td><input name="genre" type="text" style="width:70%;"/><span style="font-size: 14px"> (Optional)</span></td>
+              </tr>
+
+              <tr>
+                <td>Notes:</td> 
+                <td><textarea name="notes" rows="4"/></textarea><span style="font-size: 14px"> (Optional)</span></td>
+              </tr>
+
+            </table>
+            <div id="message"></div>
+            <center style="margin: 10px;"><a class="formSubmit" onclick="onSubmit();">Submit</a></center>
+          </div>
+        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

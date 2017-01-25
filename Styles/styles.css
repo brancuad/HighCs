@@ -1,0 +1,203 @@
+html {
+    background-color: #fff5e8;
+}
+
+body {
+	font-family: 'Fira Sans', sans-serif;
+    display: none;
+    min-width: 800px;
+}
+
+a {
+	color: #193144;
+	text-decoration: none;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+#logo {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#logowrapper {
+    font-size: 50px;
+    color: #fff;
+    height: 150px;
+    line-height: 150px;
+    text-shadow: 4px 1px black;
+}
+
+#logotext {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    font-weight: bold; 
+}
+
+#logotext:hover {
+    text-decoration: none;
+}
+
+#content {
+    z-index: 1;
+    min-height: 600px;
+}
+
+#footer {
+    background-color: #193144;
+    color: white;
+    text-align: center;
+    display: block;
+    padding: 20px;
+}
+
+#footer a {
+    color: inherit;
+}
+
+#footer a:hover {
+    color: inherit;
+    text-decoration: underline;
+}
+
+#footer img {
+    width: 24px;
+    height: 24px;
+    padding: 3px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+.icon {
+}
+
+.outer {
+    display: table;
+    height: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    width: 460px;
+    height: 120px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+}
+
+#links {
+    background-color: #193144;
+    border: 1px solid #aaa;
+    border-width: 1px 0;
+    margin: 20px 0;
+}
+
+
+#openingImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 250px;
+    margin: 10px;
+    float: left;
+}
+
+#openingName {
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#openingTitle {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    width: auto;
+}
+
+#openingBlurb {
+    font-size: 18px;
+    text-align: center;
+    margin: 10px;
+    width: auto;
+}
+
+@media (max-width: 1200px) {
+    #openingLinks {
+        text-align: right;
+        font-size: 18px;
+        height: 150px;
+        float: right;
+        position: relative;
+    }
+
+    .menu {
+        opacity: 0;
+        display: none;
+    }
+
+    .bars img{
+        width: 60px;
+    }
+
+    #openingLinks a {
+        text-align: center;
+        padding: 10px;
+        color: white;
+        width: 70px;
+        display: block;
+        border: 0px solid #aaa;
+        border-width: 0 0 2px 2px;
+        vertical-align: middle;
+        background-color: #193144;
+        z-index: 100;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    #openingLinks {
+        text-align: right;
+        font-size: 18px;
+        height: 150px;
+        display: table;
+        float: right;
+        position: relative;
+    }
+
+    .menu {
+    	text-align: center;
+        display: table-cell!important;
+        padding: 10px;
+        color: white;
+        min-width: 60px;
+        border: 0px solid #aaa;
+        border-left-width: 2px;
+        vertical-align: middle;
+        opacity: 1!important;
+    }
+
+    .bars {
+        display: none;
+    }
+}
+
+#card {
+
+}
+
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}

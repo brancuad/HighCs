@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../Styles/styles.css" />
+        <script src="../Scripts/jquery-3.1.0.min.js"></script>
+        <script src="../Scripts/base.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
+        <style type="text/css">
+            .news {
+              background-color: #eee;
+              max-width: 800px;
+              min-height: 100px;
+              margin: 20px auto;
+              border: 1px solid #aaa;
+              overflow: auto;
+            }
+
+            .news_header {
+              display: table;
+              width: 90%;
+              padding: 10px;
+              margin: 10px auto;
+              border: 0px solid #aaa;
+              border-bottom-width: 1px;
+              text-align: center;
+            }
+
+            .news_image {
+              width: 300px;
+              float: right;
+            }
+
+            .news_title {
+              font-size: 30px;
+            }
+
+            .news_body {
+              margin: 10px;
+              padding: 10px;
+              text-align: center;
+            }
+
+            .news_footer {
+              border: 0px dashed #aaa;
+              border-top-width: 1px;
+              text-align: right;
+              margin: 10px;
+              padding: 10px;
+              font-size: 14px;
+            }
+
+            .formSubmit {
+                padding: 5px 7px;
+            background-color: #fff;
+            border: 1px solid #aaa;
+          }
+
+          .formSubmit:hover {
+            border-width: 2px;
+          }
+
+          #message {
+            color: white;
+          }
+           
+            .error {
+            background-color: #db2000;
+          }
+
+          .success {
+            background-color: #34ad00;
+          }
+        </style>
+
+        <script type="text/javascript">
+            $(function (){
+                $(".formSubmit").click(function() {
+                    successMessage("Email added.");
+                });
+            });
+
+            var successMessage = function(message) {
+                $("#message").text("Success: " + message).hide().fadeIn().removeClass("error").attr("class","success");
+            }
+        </script>
+
+    </head>
+    <body>
+        <div id="header"></div>
+
+        <div id="content">
+            <div class="news">
+                <div class="news_header">
+                    <div class="news_title">Become a C!</div>
+                    <div style="font-size: 14px;">(Must be a Stony Brook student and identify as male.)</div>
+                </div>
+                <div class="news_body">
+                    <div>The audition process will resume next semester!<br />Join our email list to receive details as soon as they are available:</div>
+                    <div style="display: block; margin-top: 20px;">Email:</div>
+                    <input type="email" style="width: 50%; text-align: center;"/>
+                    <div style="margin: 10px;"><a class="formSubmit" onclick="onSubmit();">Submit</a></div>
+                    <div id="message"></div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>
